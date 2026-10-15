@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Outfit', 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --color-paper: #f3eadb;
+  --color-paper-deep: #e7dcc8;
+  --color-card: #fffaf2;
+  --color-ink: #1d1712;
+  --color-muted: #6e6256;
+  --color-line: #ddcbb3;
+  --color-brand: #b42318;
+  --color-brand-deep: #8e1b12;
+  --color-gold: #8a5a12;
+  --color-blush: #f8ebe3;
+  --color-hover: #f6efe3;
+  --shadow-card: 0 18px 40px rgba(56, 32, 12, 0.08);
+}
+
+@layer base {
+  html {
+    @apply bg-paper font-sans text-ink antialiased;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(29, 23, 18, 0.045) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+  }
+
+  html,
+  body,
+  #app {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    @apply m-0 h-dvh;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-[560] tracking-[-0.03em];
+  }
+}
+
+.film-scroll {
+  scrollbar-color: var(--color-line) transparent;
+  scrollbar-width: thin;
+}
